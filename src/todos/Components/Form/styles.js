@@ -27,22 +27,41 @@ export const InputsWrapper = styled.div`
 export const StyledInput = styled.input`
   background-color: transparent;
   border: none;
-  line-height: 1.7rem;
-  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 0.9rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   color: ${color.white};
+  padding-top: 1rem;
   transition: all .3s;
   width: 100%;
+
+  @media ${device.mobile} {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 
   @media ${device.tablet} {
     width: 40%;
     margin-right: 5%;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    padding-top: 0;
   }
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
-    line-height: 1.7rem;
-    font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+
+    @media ${device.mobile} {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    @media ${device.tablet} {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
   }
 
   &:focus {
@@ -57,14 +76,18 @@ export const StyledButton = styled.button`
   font-weight: bold;
   line-height: 1.5rem;
   font-size: 1.5rem;
-  cursor: pointer;
   border: none;
   transition: all .3s;
 
   &:hover {
-    color: ${color.white};
+    opacity: 0.8;
     transition: all .3s;
   }
+`
+
+export const PlusImage = styled.img`
+  width: 30px;
+  filter: invert(1);
 `
 
 export const ErrorMessage = styled.div`

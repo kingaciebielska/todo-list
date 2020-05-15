@@ -1,12 +1,10 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import trashIcon from '../../../assets/trash-solid.svg'
 import { Wrapper, Heading, ListWrapper, ListItem, Title, Text, TrashButton, TrashImage } from './styles'
 
 const List = ({list, handleRemove}) => {
   const handleRemoveClick = id => {
     handleRemove(id)
-    console.log('id', id)
   }
   return <Wrapper>
     <Heading>Todo List:</Heading>
