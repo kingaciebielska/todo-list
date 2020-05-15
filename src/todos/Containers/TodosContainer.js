@@ -1,11 +1,17 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import actions from '../actions'
 import List from '../Components/List'
 
 const TodosContainer = () => {
+  const dispatch = useDispatch()
   const todos =  useSelector(state => state.todos)
 
-  return <List list={todos}/>
+  const handleRemove = id => {
+    dispatch(actions.remove(id))
+  }
+
+  return <List list={todos} handleRemove={handleRemove}/>
 }
 
 export default TodosContainer

@@ -18,7 +18,7 @@ export const Heading = styled.h2`
   padding: 2rem 1rem;
   color: ${color.white};
 
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     font-size: 2rem;
   }
 `
@@ -34,8 +34,10 @@ export const ListItem = styled.li`
   background: ${color.white};
   box-shadow: ${shadow.secondary};
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     padding: 2rem 1rem;
   }
 `
@@ -44,7 +46,7 @@ export const Title = styled.h5`
   font-size: 1.2rem;
   margin: 0;
 
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     font-size: 1.4rem;
   }
 `
@@ -53,7 +55,31 @@ export const Text = styled.p`
   font-size: 0.8rem;
   margin: 1rem 0 0;
 
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     font-size: 1rem;
+  }
+`
+
+export const TrashButton = styled.button`
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  transition: all .3s;
+
+  @media ${device.tablet} {
+    font-size: 1.4rem;
+  }
+
+  &:hover {
+    opacity: 0.6;
+    transition: all .3s;
+  }
+`
+
+export const TrashImage = styled.img`
+  width: 15px;
+
+  @media ${device.tablet} {
+    width: 20px;
   }
 `
