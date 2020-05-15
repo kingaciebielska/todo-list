@@ -66,3 +66,21 @@ export const StyledButton = styled.button`
     transition: all .3s;
   }
 `
+
+export const ErrorMessage = styled.div`
+  background-color: ${color.error};
+  width: 350px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 20px;
+  transition: all .3s;
+
+  @media ${device.tablet} {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+`

@@ -1,6 +1,7 @@
 export const color = {
   white: '#fff',
-  gray: 'gray'
+  gray: 'gray',
+  error: '#fb9191'
 }
 
 export const background = {
