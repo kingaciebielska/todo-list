@@ -1,13 +1,10 @@
 import React from 'react';
+import TodosContainer from './todos/Containers/TodosContainer'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
-          Todo list
-        </h1>
-      </header>
+    <div>
+      <TodosContainer />
     </div>
   );
 }
