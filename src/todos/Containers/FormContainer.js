@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import nextId from "react-id-generator"
+import nextId from 'react-id-generator'
 import actions from '../actions'
 import plusIcon from '../../assets/plus-circle-solid.svg'
 import { FormWrapper, InputsWrapper, StyledInput, StyledButton, PlusImage, ErrorMessage } from '../Components/Form/styles'
@@ -26,6 +26,7 @@ const FormContainer = () => {
   const titleInput = React.createRef()
   const descriptionInput = React.createRef()
 
+  const [isAnimated, setAnimation] = React.useState(false)
   const [errorMessage, setError] = React.useState(null)
   const [form, setForm] = React.useState({
     title: '',
@@ -46,10 +47,12 @@ const FormContainer = () => {
     const error = validateForm(form)
     if(error) {
       setError(error)
+      setAnimation(true)
       return
     }
 
     setError(null)
+    setAnimation(false)
     setForm({
       title: '',
       description: ''
@@ -67,7 +70,7 @@ const FormContainer = () => {
       </InputsWrapper>
       <StyledButton type="submit"><PlusImage src={plusIcon} alt="icon-plus"/></StyledButton>
     </FormWrapper>
-    {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+    {errorMessage && <ErrorMessage onAnimationEnd={() => setAnimation(false)} isAnimated={isAnimated}>{errorMessage}</ErrorMessage>}
   </>
 }
 

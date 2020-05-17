@@ -91,6 +91,10 @@ export const PlusImage = styled.img`
 `
 
 export const ErrorMessage = styled.div`
+  ${props => props.isAnimated && 'animation: shake 0.9s cubic-bezier(.36,.07,.19,.97) both;'}
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
   background-color: ${color.error};
   width: 350px;
   max-width: 90%;
