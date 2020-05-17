@@ -14,4 +14,8 @@ const List = ({list, handleRemove}) => {
   </Wrapper>
 }
 
+List.defaultProps = {
+  list: [],
+}
+
 export default List
