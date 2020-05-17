@@ -29,11 +29,13 @@ export const Heading = styled.h2`
 
 export const ListWrapper = styled.ul`
   width: 100%;
+  overflow: hidden;
   padding: 0;
   margin: 0;
 `
 
 export const ListItem = styled.li`
+  ${props => props.isAnimated && 'animation: slideOut .5s ease-out;'}
   list-style: none;
   background: ${color.white};
   box-shadow: ${shadow.secondary};
@@ -66,7 +68,7 @@ export const Text = styled.p`
   @media ${device.mobile} {
     font-size: 0.8rem;
   }
-  
+
   @media ${device.tablet} {
     font-size: 1rem;
   }

@@ -50,6 +50,31 @@ const GlobalStyle = createGlobalStyle`
       transform: translate3d(4px, 0, 0);
     }
   }
+
+//animation on remove item
+  @keyframes slideOut {
+    0% {
+      transform: skew(0deg);
+    }
+
+    10% {
+      transform: skew(-15deg);
+    }
+
+    10% {
+      transform: skew(0deg translate(0));
+    }
+
+    70% {
+      transform: skew(-20deg);
+      opacity: 1;
+    }
+
+    90% {
+      transform: skewX(43deg) translateX(-60%);
+      opacity: 0;
+    }
+  }
 `
 
 export default GlobalStyle
