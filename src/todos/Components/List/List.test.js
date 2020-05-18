@@ -41,10 +41,13 @@ describe('<List />', ()  => {
   })
 
   it('remove item', () => {
-    const list = [{id: '123', title: 'lorem', description: 'ipsum'}]
-		const wrapper = mount(<List list={list} handleRemove={handleRemove}/>);
-    wrapper.find('button').simulate('click')
-		expect(handleRemove).toHaveBeenCalledTimes(1)
-		expect(handleRemove).toHaveBeenLastCalledWith('123')
+		const list = [{id: '123', title: 'lorem', description: 'ipsum'}]
+		const wrapper = mount(<List list={list} handleRemove={handleRemove}/>)
+		wrapper.find('button').simulate('click')
+		setTimeout(() => {
+			expect(handleRemove).toHaveBeenCalledTimes(1)
+			expect(handleRemove).toHaveBeenLastCalledWith('123')
+			done()
+		}, 5000)
 	})
 })
