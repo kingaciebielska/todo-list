@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import nextId from 'react-id-generator'
 import actions from '../actions'
 import plusIcon from '../../assets/plus-circle-solid.svg'
-import { FormWrapper, InputsWrapper, StyledInput, StyledButton, PlusImage, ErrorMessage } from '../Components/Form/styles'
+import { FormWrapper, InputsWrapper, InputGroup, StyledInput, StyledLine, StyledButton, PlusImage, ErrorMessage } from '../Components/Form/styles'
 
 const validateForm = form => {
   if(!form.title) {
@@ -65,8 +65,14 @@ const FormContainer = () => {
   return <>
     <FormWrapper onSubmit={handleSubmit}>
       <InputsWrapper>
-        <StyledInput onChange={upadeField} ref={titleInput} name="title" placeholder="title" type="text" />
-        <StyledInput onChange={upadeField} ref={descriptionInput} name="description" placeholder="description" type="text" />
+        <InputGroup>
+          <StyledInput onChange={upadeField} ref={titleInput} name="title" placeholder="title" type="text" />
+          <StyledLine />
+        </InputGroup>
+        <InputGroup>
+          <StyledInput onChange={upadeField} ref={descriptionInput} name="description" placeholder="description" type="text" />
+          <StyledLine />
+        </InputGroup>
       </InputsWrapper>
       <StyledButton type="submit"><PlusImage src={plusIcon} alt="icon-plus"/></StyledButton>
     </FormWrapper>

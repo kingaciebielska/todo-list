@@ -23,6 +23,24 @@ export const InputsWrapper = styled.div`
     flex-direction: row;
   }
 `
+export const InputGroup = styled.div`
+  position: relative;
+  width: 100%;
+  @media ${device.tablet} {
+    width: 40%;
+    margin-right: 5%;
+  }
+`
+
+export const StyledLine = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: ${color.white};
+  width: 0;
+  height: 2px;
+  transition: all .6s;
+`
 
 export const StyledInput = styled.input`
   background-color: transparent;
@@ -41,10 +59,9 @@ export const StyledInput = styled.input`
   }
 
   @media ${device.tablet} {
-    width: 40%;
-    margin-right: 5%;
+    width: 100%;
     font-size: 1.2rem;
-    line-height: 1.7rem;
+    line-height: 2.2rem;
     padding-top: 0;
   }
 
@@ -64,9 +81,9 @@ export const StyledInput = styled.input`
     }
   }
 
-  &:focus {
-    border-bottom: 2px solid rgba(255, 255, 255, 1);
-    transition: all .3s;
+  &:focus + div {
+    width: 100%;
+    transition: all .6s;
   }
 `
 
