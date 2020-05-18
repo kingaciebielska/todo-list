@@ -2,11 +2,7 @@ import types from './types'
 
 const INITIAL_STATE = {
   listName: 'Todo list',
-  todos: [
-    {id: "1", title: 'First task', description: 'Lorem ipsum ...'},
-    {id: "2", title: 'Second task', description: 'Lorem ipsum ...'},
-    {id: "3", title: 'Third task', description: 'Lorem ipsum ...'}
-  ]
+  todos: []
 }
 
 function reducerTodos(state = INITIAL_STATE, action) {
